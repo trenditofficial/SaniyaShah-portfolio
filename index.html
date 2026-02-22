@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saniya Shah </title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#050816;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ================= DIGITAL GRID BACKGROUND ================= */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background-image:
+    linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+  background-size:60px 60px;
+  animation:moveGrid 25s linear infinite;
+  z-index:-2;
+}
+
+@keyframes moveGrid{
+  from{transform:translate(0,0);}
+  to{transform:translate(-60px,-60px);}
+}
+
+/* Glow Effects */
+.glow{
+  position:fixed;
+  width:400px;
+  height:400px;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.3;
+  z-index:-1;
+}
+
+.glow1{ background:#00f5ff; top:-100px; left:-100px;}
+.glow2{ background:#8a2be2; bottom:-120px; right:-100px;}
+
+/* ================= NAVBAR ================= */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,255,255,0.3);
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+}
+
+nav ul li{
+  margin:0 15px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:#00f5ff;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  text-shadow:0 0 10px #00f5ff;
+}
+
+/* ================= HERO ================= */
+.firstSection{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:120px 8%;
+  flex-wrap:wrap;
+}
+
+.leftSection{
+  font-size:2.5rem;
+  flex:1;
+  min-width:280px;
+}
+
+.purple{
+  color:#8a2be2;
+  text-shadow:0 0 12px #8a2be2;
+}
+
+#element{
+  color:#00f5ff;
+  text-shadow:0 0 12px #00f5ff;
+}
+
+.rightSection img{
+  width:320px;
+  border-radius:20px;
+  box-shadow:0 0 40px #00f5ff;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* ================= ABOUT ================= */
+#about{
+  padding:80px 8%;
+  display:flex;
+  justify-content:none;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.aboutText{
+  flex:1;
+  min-width:280px;
+  margin-right:40px;
+}
+
+.aboutText h2{
+  font-size:2rem;
+  color:#00f5ff;
+  text-shadow:0 0 12px #00f5ff;
+  margin-bottom:20px;
+}
+
+.aboutText p{
+  font-size:1rem;
+  line-height:1.8;
+  opacity:0.9;
+}
+
+.aboutImage{
+  flex:1;
+  min-width:280px;
+  text-align:center;
+}
+
+.aboutImage img{
+  width:300px;
+  border-radius:20px;
+  box-shadow:0 0 40px #8a2be2;
+  animation:float 4s ease-in-out infinite;
+}
+
+/* ================= SKILLS ================= */
+.sectionTitle{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:50px;
+  color:#00f5ff;
+  text-shadow:0 0 12px #00f5ff;
+}
+
+.skillsGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  padding:0 8%;
+}
+
+.skillBox{
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  transition:0.4s ease;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.skillBox h3{
+  margin-bottom:15px;
+  font-size:1.4rem;
+}
+
+.skillBox p{
+  font-size:0.95rem;
+  line-height:1.6;
+  opacity:0.9;
+}
+
+.skillBox:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+/* ================= WORK SECTION ================= */
+
+.workSection {
+  padding: 80px 8%;
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Card Design */
+.workCard {
+  background: linear-gradient(145deg, rgba(0, 245, 255, 0.08), rgba(138, 43, 226, 0.08));
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow Animation */
+.workCard::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(45deg, transparent, rgba(0,255,255,0.3), transparent);
+  top: -100%;
+  left: -100%;
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.workCard:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+.workCard:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 30px #00f5ff;
+}
+
+.workCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #00f5ff;
+}
+
+.role {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #8a2be2;
+  font-weight: 600;
+}
+
+.workCard ul {
+  padding-left: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.workLinks a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: 1px solid #00f5ff;
+  color: #00f5ff;
+  transition: 0.3s;
+}
+
+.workLinks a:hover {
+  background: #00f5ff;
+  color: black;
+  box-shadow: 0 0 15px #00f5ff;
+}
+
+/* Unique Colors */
+.digital{
+  background:linear-gradient(135deg, rgba(0,245,255,0.2), rgba(0,0,0,0.6));
+  border-left:5px solid #00f5ff;
+}
+.digital:hover{ box-shadow:0 0 25px #00f5ff; }
+
+.seo{
+  background:linear-gradient(135deg, rgba(0,255,127,0.2), rgba(0,0,0,0.6));
+  border-left:5px solid #00ff7f;
+}
+.seo:hover{ box-shadow:0 0 25px #00ff7f; }
+
+.social{
+  background:linear-gradient(135deg, rgba(255,20,147,0.2), rgba(0,0,0,0.6));
+  border-left:5px solid #ff1493;
+}
+.social:hover{ box-shadow:0 0 25px #ff1493; }
+
+.pr{
+  background:linear-gradient(135deg, rgba(138,43,226,0.2), rgba(0,0,0,0.6));
+  border-left:5px solid #8a2be2;
+}
+.pr:hover{ box-shadow:0 0 25px #8a2be2; }
+
+.marketing{
+  background:linear-gradient(135deg, rgba(255,140,0,0.2), rgba(0,0,0,0.6));
+  border-left:5px solid #ff8c00;
+}
+.marketing:hover{ box-shadow:0 0 25px #ff8c00; }
+
+/* ================= TIMELINE ================= */
+.timeline{
+  position:relative;
+  margin:80px auto;
+  padding:0 8%;
+}
+
+.timeline::after{
+  content:''; 
+  position:absolute;
+  width:3px;
+  background:#00f5ff;
+  top:0;
+  bottom:0;
+  left:50%;
+}
+
+.container{
+  padding:20px 40px;
+  position:relative;
+  width:50%;
+}
+
+.container.left{ left:0; }
+.container.right{ left:50%; }
+
+.content{
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(0,255,255,0.3);
+  transition:0.3s;
+}
+
+.content:hover{
+  box-shadow:0 0 20px #8a2be2;
+}
+
+/* ================= CONTACT ================= */
+.contactSection{
+  padding:80px 8%;
+  text-align:center;
+}
+
+.contactForm{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contactForm input,
+.contactForm textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(0,255,255,0.4);
+  background:black;
+  color:white;
+}
+
+.contactForm button{
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  background:#00f5ff;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.contactForm button:hover{
+  background:#8a2be2;
+  box-shadow:0 0 15px #8a2be2;
+}
+
+/* Social icons inside contact */
+.socialIcons{
+  margin:20px 0;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.socialIcons a{
+  font-size:28px;
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(0,0,0,0.6);
+  transition:0.4s;
+  text-decoration:none;
+}
+
+/* Brand Colors */
+.insta{ color:#E1306C; border:1px solid #E1306C; }
+.insta:hover{ background:#E1306C; color:white; box-shadow:0 0 20px #E1306C; }
+
+.facebook{ color:#1877F2; border:1px solid #1877F2; }
+.facebook:hover{ background:#1877F2; color:white; box-shadow:0 0 20px #1877F2; }
+
+.twitter{ color:#000; border:1px solid #fff; }
+.twitter:hover{ background:#fff; color:black; box-shadow:0 0 20px #fff; }
+
+.linkedin{ color:#0A66C2; border:1px solid #0A66C2; }
+.linkedin:hover{ background:#0A66C2; color:white; box-shadow:0 0 20px #0A66C2; }
+
+.email{ color:#00f5ff; border:1px solid #00f5ff; }
+.email:hover{ background:#00f5ff; color:black; box-shadow:0 0 20px #00f5ff; }
+
+/* WhatsApp Floating Button */
+.whatsappFloat{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(37,211,102,0.6);
+  transition:0.3s;
+  z-index:1000;
+}
+
+.whatsappFloat:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 30px #25D366;
+}
+
+/* ================= COPYRIGHT ================= */
+footer{
+  text-align:center;
+  padding:25px 8%;
+  background:rgba(0,0,0,0.5);
+  border-top:1px solid #00f5ff;
+  color:#00f5ff;
+  font-size:0.9rem;
+  text-shadow:0 0 8px #00f5ff;
+}
+
+footer span{
+  color:#f0eff2;
+  font-weight: 200;
+
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .firstSection{ flex-direction:column; text-align:center; }
+  #about{ flex-direction:column; text-align:center; }
+  .aboutText{ margin-right:0; }
+  .timeline::after{ left:20px; }
+  .container{ width:100%; padding-left:60px; }
+  .container.right{ left:0; }
+}
+</style>
+</head>
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<!-- Navbar -->
+<nav>
+  <h2>Saniya Shah</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="firstSection">
+  <div class="leftSection">
+    Hi, I'm <span class="purple">Saniya Shah</span><br>
+    I am a <span id="element"></span>
+  </div>
+  <div class="rightSection">
+    <img src="saniyaprofile.png" alt="Profile Image">
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="aboutText">
+    <h2>About Me</h2>
+    <p>
+      As a results-driven digital marketer and a 2025 Bachelor of Management Studies (Marketing) graduate from the University of Mumbai,
+     I bring over two years of hands-on experience in building brand presence across diverse sectors, including Real Estate, News Media, and E-commerce.
+     I am good in full-funnel performance marketing, with a proven ability to design and manage high-converting ad campaigns on both Google and Meta platforms.
+     My expertise extends to end-to-end social media management, where I leverage data-driven strategies to grow communities and drive engagement.
+     I combine strategic thinking with creative execution, utilizing a professional toolkit that includes Canva, Microsoft Designer, Adobe Express, and VN Video Editor to produce high-quality visual content.
+     Additionally, I am a skilled scriptwriter, capable of crafting compelling narratives that resonate with target audiences and strengthen brand identity.
+     With a solid academic foundation and practical industry experience,</p> 
+
+   <h3>" I don't just run Ads, i help in generating ROI"</h3>
+  </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2 class="sectionTitle">Core Expertise</h2>
+  <div class="skillsGrid">
+    <div class="skillBox digital">
+      <h3>Digital Marketing</h3>
+      <p>Strategic campaigns focused on growth, targeting, paid ads and ROI optimization.</p>
+    </div>
+    <div class="skillBox seo">
+      <h3>SEO Optimization</h3>
+      <p>Keyword research, on-page/off-page SEO and analytics tracking for ranking improvement.</p>
+    </div>
+    <div class="skillBox social">
+      <h3>Social Media Marketing</h3>
+      <p>Engagement growth strategies and paid campaigns for Instagram & Facebook.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Work Timeline -->
+<!-- ================= WORK SECTION (Animated Cards) ================= -->
+<section id="work" class="workSection">
+  <h2 class="sectionTitle">Work Experience</h2>
+
+  <div class="workGrid">
+
+    <!-- Property Plaaza -->
+    <div class="workCard">
+      <h3>Property Plaaza</h3>
+      <p class="role">Social Media & Content Strategist</p>
+
+      <ul>
+        <li>Grew Instagram from 10 to 1.5K followers organically</li>
+        <li>Content strategy & engagement growth</li>
+        <li>YouTube description writing & content ideation</li>
+      </ul>
+
+      <div class="workLinks">
+        <a href="https://www.instagram.com/property_plaaza?igsh=NDBjZHBqMXIwdGps" target="_blank">Instagram</a>
+        <a href="https://youtube.com/@property_plaza_bikash_barnwal?si=yvUI_oETbdXg1qwq" target="_blank">YouTube</a>
+      </div>
+    </div>
+
+    <!-- Business Upturn -->
+    <div class="workCard">
+      <h3>Business Upturn Asia</h3>
+      <p class="role">Stock Market Article Writer & LinkedIn Manager</p>
+
+      <ul>
+        <li>Finance & stock market article writing</li>
+        <li>Managed LinkedIn company page strategy</li>
+        <li>Improved engagement & brand visibility</li>
+      </ul>
+
+      <div class="workLinks">
+        <a href="https://www.linkedin.com/company/business-upturn-asia/" target="_blank">LinkedIn Page</a>
+      </div>
+    </div>
+
+    <!-- Air Lifestyle -->
+    <div class="workCard">
+      <h3>Air Lifestyle</h3>
+      <p class="role">Social Media Manager</p>
+
+      <ul>
+        <li>Full social media management</li>
+        <li>Content planning & engagement growth</li>
+        <li>Brand positioning strategy</li>
+      </ul>
+
+      <div class="workLinks">
+        <a href="https://www.instagram.com/airlifestyle.official?igsh=eWIxMTlnc3B0am5l" target="_blank">Instagram</a>
+      </div>
+    </div>
+
+    <!-- Sarvadnya Academy -->
+    <div class="workCard">
+      <h3>Sarvadnya Civil & Interior Academy</h3>
+      <p class="role">Meta Ads Specialist</p>
+
+      <ul>
+        <li>Ran Meta Ads for 1 month</li>
+        <li>Generated 89 leads in ₹4,500 budget</li>
+        <li>Achieved 50% ROI</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contactSection" id="contact">
+  <h2 class="sectionTitle">Contact Me</h2>
+  <div class="contactInfo">
+    <p>Let’s collaborate and build something amazing 🚀</p>
+    <div class="socialIcons">
+      <a href="https://instagram.com/yourusername" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+      
+      <a href="https://www.linkedin.com/in/saniya-shah-a1ba35266/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:trenditofficial21@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:saniyashah2104@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <form class="contactForm" onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea rows="4" id="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917678053928" class="whatsappFloat" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- COPYRIGHT -->
+<footer>
+  &copy; 2026 <span>Saniya Shah</span>. Crafting digital dreams and spreading pixels of joy.
+</footer>
+
+<!-- Typed.js Animation -->
+<script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+<script>
+var typed = new Typed("#element", {
+  strings:["Digital Marketer","SEO Specialist","Brand Strategist"],
+  typeSpeed:60,
+  backSpeed:40,
+  loop:true
+});
+
+// Contact Form Validation
+function validateForm(){
+  let name=document.getElementById("name").value;
+  let email=document.getElementById("email").value;
+  let message=document.getElementById("message").value;
+
+  if(name===""||email===""||message===""){
+    alert("Please fill all fields!");
+    return false;
+  }
+
+  if(!email.includes("@")){
+    alert("Enter valid email!");
+    return false;
+  }
+
+  alert("Message sent successfully!");
+  return true;
+}
+</script>
+</body>
+</html>
